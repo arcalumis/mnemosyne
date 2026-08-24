@@ -1041,6 +1041,8 @@ all = [
     { name = "huggingface-hub" },
     { name = "llama-cpp-python" },
     { name = "mcp" },
+    { name = "onnxruntime", version = "1.23.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "onnxruntime", version = "1.25.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "sqlite-vec" },
 ]
 dev = [
@@ -1051,6 +1053,8 @@ dev = [
 ]
 embeddings = [
     { name = "fastembed" },
+    { name = "onnxruntime", version = "1.23.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "onnxruntime", version = "1.25.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "sqlite-vec" },
 ]
 llm = [
@@ -1069,6 +1073,7 @@ sync = [
     { name = "cryptography" },
 ]
 test = [
+    { name = "build" },
     { name = "pytest" },
 ]
 
@@ -1077,6 +1082,7 @@ requires-dist = [
     { name = "anyio", marker = "python_full_version >= '3.10' and extra == 'all'", specifier = ">=4.0" },
     { name = "anyio", marker = "python_full_version >= '3.10' and extra == 'mcp'", specifier = ">=4.0" },
     { name = "build", marker = "extra == 'dev'" },
+    { name = "build", marker = "extra == 'test'" },
     { name = "cryptography", marker = "extra == 'all'", specifier = ">=41.0" },
     { name = "cryptography", marker = "extra == 'sync'", specifier = ">=41.0" },
     { name = "ctransformers", marker = "extra == 'all'", specifier = ">=0.2.27" },
@@ -1089,6 +1095,8 @@ requires-dist = [
     { name = "llama-cpp-python", marker = "extra == 'llm'", specifier = ">=0.2.0" },
     { name = "mcp", marker = "python_full_version >= '3.10' and extra == 'all'", specifier = ">=2.0.0" },
     { name = "mcp", marker = "python_full_version >= '3.10' and extra == 'mcp'", specifier = ">=2.0.0" },
+    { name = "onnxruntime", marker = "extra == 'all'", specifier = ">=1.21.0,<1.29" },
+    { name = "onnxruntime", marker = "extra == 'embeddings'", specifier = ">=1.21.0,<1.29" },
     { name = "openclaw", marker = "python_full_version >= '3.10' and extra == 'openclaw'", specifier = ">=0.1.0" },
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=7.0" },
     { name = "pytest", marker = "extra == 'test'", specifier = ">=7.0" },
